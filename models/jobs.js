@@ -3,16 +3,18 @@ const Schema = mongoose.Schema;
 
 //Create Schema
 const jobSchema = new Schema ({
-    Company: {type:String, required: true},
-    Position: {type:String, required: true},
-    Link: String,
-    haveYouApplied: Boolean,
+    company: {type:String, required: true},
+    position: {type:String, required: true},
+    link: String,
+    haveYouApplied: {type: Boolean, required:true},
     dateApplied:Date,
     gotAnInterview: Boolean,
-    phoneInterview:Date,
-    inPersonInterview:Date,
-    gotAnOffer: Boolean
-}, {timestamps:true})
+    interviewDate: Date,
+    interviewMethod: String,
+    receivedAnOffer: Boolean,
+    notes: String,
+    tags:Array
+}, {timestamps:true});
 
 //Creating model from the schema
 const Job = mongoose.model('Job', jobSchema)

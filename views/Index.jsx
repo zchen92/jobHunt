@@ -7,7 +7,7 @@ class Index extends React.Component{
             <div>
                 <h1>Job Hunt</h1>
                 <nav>
-                    <a href="/jobs">Jobs</a>
+                    <a href="/jobs">Jobs</a><br/>
                     <a href="/contacts">Contacts</a>
                 </nav>
             </div>

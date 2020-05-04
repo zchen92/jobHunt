@@ -39,7 +39,7 @@ app.use('/contacts', contactsController)
 ////  INDEX   ////
 //////////////////
 app.get('/', (req,res)=>{
-    res.render('Index.jsx')
+    res.render('Index')
 })
 
 ////////////////////////

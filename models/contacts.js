@@ -9,7 +9,8 @@ const contactSchema = new Schema ({
     phone: Number,
     email: String,
     lastContacted: Date,
-    notes: String
+    notes: String,
+    tags: Array
 },{timestamps:true})
 
 //Creating model from the schema
