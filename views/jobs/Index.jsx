@@ -13,13 +13,13 @@ class Index extends React.Component{
                         return(
                             <div>
                                 <h2>Company: {job.company}</h2><br/>
-                                <h3>Position:<a href={`/jobs/${job._id}`}></a>{job.position}</h3><br/>
+                                <h3>Position:<a href={`/jobs/${job._id}`}>{job.position}</a></h3><br/>
                                 <p>Have you Applied? {job.haveYouApplied ? `Yes`: `No`}</p><br/>
                                 <p>Did you get an interview? {job.gotAnInterview ? `Yes` :`No`}</p><br/>
                                 <p>Did you receive an offer? {job.receivedAnOffer ? `Yes` : `No`}</p>
                             </div>
                         )
-                    })};
+                    })}
                 </div>
             </div>
         );

@@ -2,7 +2,7 @@ const React = require('react');
 
 class Edit extends React.Component{
     render() {
-        const { name, company, img, phone, email, lastContacted, notes, tags } = this.props.contact;
+        const { _id, name, company, img, phone, email, lastContacted, notes, tags } = this.props.contact;
         return(
             <div>
                 <h1>Edit Contact</h1>
@@ -12,11 +12,12 @@ class Edit extends React.Component{
                     Image: <input type="url" name="img" defaultValue={img}/><br/>
                     Phone Number: <input type="number" name="phone" defaultValue={phone}/><br/>
                     Email: <input type="email" name='email' defaultValue={email}/><br/>
-                    Last Contacted: <input type="date" name="lastContacted" defaultValue={lastContacted}/><br/>
+                    Last Contacted: <input type="date" name="lastContacted" defaultValue={lastContacted ? lastContacted : ""}/><br/>
                     Notes: <input type="textarea" name="notes" defaultValue={notes}/><br/>
                     Tags: <input type="texts" name="tags" defaultValue={tags}/><br/>
                     <input type="submit" name="" value="Update Contact"/>
                 </form>
+                <button><a href="/contacts">Back</a></button>
             </div>
         )
     }

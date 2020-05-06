@@ -19,7 +19,7 @@ router.get('/', (req,res)=>{
 //////////////////////////
 /////  NEW - Jobs   /////
 ////////////////////////
-router.get('/new', (req,res)=>{
+router.get('/New', (req,res)=>{
     res.render('jobs/New');
 });
 
@@ -28,7 +28,7 @@ router.get('/new', (req,res)=>{
 //////////////////////////
 router.get('/:id', (req,res)=>{
     Job.findById(req.params.id,(err,foundJob)=>{
-        res.render('Show', {job:foundJob});
+        res.render('jobs/Show', {job:foundJob});
     });
 });
 
@@ -36,8 +36,8 @@ router.get('/:id', (req,res)=>{
 ////  EDIT - Jobs  ////
 //////////////////////
 router.get('/:id/edit', (req,res)=>{
-    Job.findById(req.params.id, (err, foundJob)=>{
-        res.render('Edit',{job:foundJob});
+    Job.findById(req.params.id, (err, editJob)=>{
+        res.render('jobs/Edit',{job:editJob});
     });
 });
 
@@ -48,8 +48,29 @@ router.get('/:id/edit', (req,res)=>{
 ///////////////////////////
 ////  CREATE - Jobs   ////
 /////////////////////////
-router.post('/jobs', (req,res)=>{
-    Job.create(req.body, (err, createdJob)=>{
+router.post('/', (req,res)=>{
+    if (req.body.haveYouApplied === "on") {
+        req.body.haveYouApplied = true;
+    } else {
+        req.body.haveYouApplied = false
+    };
+    if (req.body.gotAnInterview === "on") {
+        req.body.gotAnInterview = true;
+    } else {
+        req.body.gotAnInterview = false
+    };
+    if (req.body.receivedAnOffer === "on") {
+        req.body.receivedAnOffer = true;
+    } else {
+        req.body.receivedAnOffer = false
+    };
+    if (req.body.dateApplied == null) {
+        delete req.body.dateApplied //just deleted data from mongodb
+    };
+    if (req.body.interviewDate == null) {
+        delete req.body.interviewDate //just deleted data from mongodb
+    };
+    Job.create(req.body, (err, jobs)=>{
         res.redirect('/jobs');
     });
 })
@@ -67,8 +88,29 @@ router.delete('/:id',(req,res)=>{
 ////  UPDATE - Jobs ////
 ///////////////////////
 router.put('/:id', (req,res)=>{
+    if (req.body.haveYouApplied === "on") {
+        req.body.haveYouApplied = true;
+    } else {
+        req.body.haveYouApplied = false
+    };
+    if (req.body.gotAnInterview === "on") {
+        req.body.gotAnInterview = true;
+    } else {
+        req.body.gotAnInterview = false
+    };
+    if (req.body.receivedAnOffer === "on") {
+        req.body.receivedAnOffer = true;
+    } else {
+        req.body.receivedAnOffer = false
+    };
+    if (req.body.dateApplied == null) {
+        delete req.body.dateApplied //just deleted data from mongodb
+    };
+    if (req.body.interviewDate == null) {
+        delete req.body.interviewDate //just deleted data from mongodb
+    };
     Job.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedJob)=>{
-        res.redirect('/jobs')
+        res.redirect(`/jobs/${req.params.id}`)
     })
 })
 

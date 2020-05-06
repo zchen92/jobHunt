@@ -12,7 +12,7 @@ class Index extends React.Component{
                     {contacts.map((contact,index)=>{
                         return(
                             <div>
-                                <h2>Name: <a href={`/contacts/${contact._id}`}></a>{contact.name}</h2><br/>
+                                <h2>Name: <a href={`/contacts/${contact._id}`}>{contact.name}</a></h2><br/>
                                 <h3>Company: {contact.company}</h3><br/>
                                 <img src={contact.img} alt=""/>
                             </div>

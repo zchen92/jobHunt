@@ -32,7 +32,7 @@ router.get('/New', (req,res)=>{
 /////////////////////////////
 router.get('/:id', (req,res)=>{
     Contact.findById(req.params.id,(err,showContact)=>{
-        res.render('Show', {contact:showContact});
+        res.render('contacts/Show', {contact:showContact});
     });
 });
 
@@ -41,7 +41,7 @@ router.get('/:id', (req,res)=>{
 /////////////////////////
 router.get('/:id/edit', (req,res)=>{
     Contact.findById(req.params.id, (err, editContact)=>{
-        res.render('Edit',{contact:editContact});
+        res.render('contacts/Edit',{contact:editContact});
     });
 });
 
@@ -53,14 +53,11 @@ router.get('/:id/edit', (req,res)=>{
 //////////////////////////////
 ////  CREATE - Contacts  ////
 ////////////////////////////
-// router.post('/contacts', (req,res)=>{
-//     Contact.create(req.body, (err, createdContact)=>{
-//         res.redirect('/contacts');
-//     });
-// })
 
-router.post('/contacts',(req,res)=>{
-    //console.log("hello")
+router.post('/',(req,res)=>{
+    if (req.body.lastContacted == null) {
+        delete req.body.lastContacted //just deleted data from mongodb
+    }
     Contact.create(req.body,(err, contacts)=>{
         //res.send(createdProduct)
         //console.log("hello world")
@@ -81,8 +78,11 @@ router.delete('/:id',(req,res)=>{
 ////  UPDATE - Contacts ////
 ////////////////////////////
 router.put('/:id', (req,res)=>{
+    if (req.body.lastContacted == null) {
+        delete req.body.lastContacted //just deleted data from mongodb
+    }
     Contact.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedContact)=>{
-        res.redirect('/contacts')
+        res.redirect(`/contacts/${req.params.id}`)
     })
 })
 

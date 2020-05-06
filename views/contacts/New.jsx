@@ -13,6 +13,7 @@ class New extends React.Component{
                     Email: <input type="email" name='email'/><br/>
                     Last Contacted: <input type="date" name="lastContacted"/><br/>
                     Notes: <input type="textarea" name="notes"/><br/>
+                    
                     Tags: <input type="texts" name="tags"/><br/>
                     <input type="submit" name="" value="Add Contact"/>
                 </form>
