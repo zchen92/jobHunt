@@ -1,13 +1,18 @@
 const React = require('react');
-//const Default = require('./Default.jsx');
+const Default = require('../Default.jsx');
 
 class Index extends React.Component{
     render() {
         const { jobs } = this.props
+        console.log(this.props)
         return (
             <div>
                 <h1>All Jobs</h1>
                 <nav><a href="/jobs/new">Add a New Job</a></nav>
+                <form action="/search" method="POST">
+                    <input type="text" name="search"/>
+                    <input type="submit" name="submit"/>
+                </form>
                 <div>
                     {jobs.map((job,index)=>{
                         return(

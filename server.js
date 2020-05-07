@@ -42,6 +42,47 @@ app.get('/', (req,res)=>{
     res.render('Index')
 })
 
+////////////////////
+////  SEARCH   ////
+//////////////////
+/*app.post('/search', (req,res)=>{
+    console.log(req.body)
+    // res.send("hi")
+    //Job.find({company:req.body.search}, (err, foundSearch)=>{
+    Job.find({position:req.body.search}, (err, foundSearch)=>{
+        // res.send(foundSearch)
+        Job.find({}, (err, allJobs)=>{
+            res.render("jobs/Index", {search:foundSearch, jobs:allJobs})
+        })
+    });
+})*/
+
+app.post('/search', (req,res)=>{
+    console.log(req.body)
+    let contacts = []
+    Contact.find({company:req.body.search}, (err, foundSearch)=>{
+        // Contact.find({}, (err, allContacts)=>{
+            //res.render("Search", {search:foundSearch, contacts:allContacts})
+            contacts = foundSearch
+       // })
+    });
+    Job.find({company:req.body.search}, (err, foundSearch)=>{
+        // res.send(foundSearch)
+        // Job.find({}, (err, allJobs)=>{
+            res.render("Search", {search:[...foundSearch, ...contacts]}) //... is used to takes contents of 2 arrays and puts it into one
+    });
+    
+})
+
+// app.post('/search', (req,res)=>{
+//     console.log(req.body)
+//     Contact.find({company:req.body.search}, (err, foundSearch)=>{
+//         Contact.find({}, (err, allContacts)=>{
+//             res.render("Search", {search:foundSearch, contacts:allContacts})
+//         })
+//     });
+// })
+
 ////////////////////////
 /////   LISTEN    //////
 ////////////////////////

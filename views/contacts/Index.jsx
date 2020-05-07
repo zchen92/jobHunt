@@ -1,5 +1,5 @@
 const React = require('react');
-//const Default = require('./Default.jsx');
+const Default = require('../Default.jsx');
 
 class Index extends React.Component{
     render() {
@@ -8,6 +8,10 @@ class Index extends React.Component{
             <div>
                 <h1>All Contacts</h1>
                 <nav><a href="/contacts/new">Add a New Contact</a></nav>
+                <form action="/search" method="POST">
+                    <input type="text" name="search"/>
+                    <input type="submit" name="submit"/>
+                </form>
                 <div>
                     {contacts.map((contact,index)=>{
                         return(
