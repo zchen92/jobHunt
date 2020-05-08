@@ -3,7 +3,7 @@
 ////////////////////////////////////////////
 const express = require('express');
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 const mongoose = require('mongoose')
 const Job = require('./models/jobs.js');
 const Contact = require('./models/contacts.js');
@@ -21,10 +21,27 @@ app.engine('jsx', require('express-react-views').createEngine());
 ////////////////////////////////////////////
 /////////   MONGOOSE COLLECTION   /////////
 ///////////////////////////////////////////
-mongoose.connect('mongodb://localhost:27017/basiccrud', { useNewUrlParser: true, useUnifiedTopology: true });
-mongoose.connection.once('open', ()=>{
-    console.log('connected to mongo')
-})
+// mongoose.connect('mongodb://localhost:27017/basiccrud', { useNewUrlParser: true, useUnifiedTopology: true });
+// mongoose.connection.once('open', ()=>{
+//     console.log('connected to mongo')
+// })
+
+////////////////////////////////
+/////////   DATABASE    ///////
+//////////////////////////////
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/jobHunt'
+
+// connect to mongo
+mongoose.connection(MONGODB_URI, {useNewUrlParser: true});
+
+// Error / success
+mongoose.connection.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
+mongoose.connection.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
+mongoose.connection.on('disconnected', () => console.log('mongo disconnected'));
+
+// open the connection to mongo
+mongoose.connection.on('open' , ()=>{});
+
 
 //////////////////////////////////
 /////////   CONTROLLER   /////////
@@ -91,5 +108,5 @@ app.post('/search', (req,res)=>{
 /////   LISTEN    //////
 ////////////////////////
 app.listen(port, ()=>{
-    console.log('listening on port: ' + port);
+    console.log('listening on port: ' + PORT);
 })
