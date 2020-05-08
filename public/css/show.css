@@ -30,3 +30,11 @@ li {
     font-size: 15px;
     padding: 2px
 }
+
+.navbar-brand {
+    font-size: 30px
+}
+
+.navbar {
+    padding-top: 5px
+}

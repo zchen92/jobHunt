@@ -57,7 +57,9 @@ router.get('/:id/edit', (req,res)=>{
 router.post('/',(req,res)=>{
     if (req.body.lastContacted == null) {
         delete req.body.lastContacted //just deleted data from mongodb
-    }
+    };
+    console.log(req.body.img)
+    req.body.img === '' ? req.body.img = `https://i.imgur.com/LtT3pWh.jpg` : req.body.img = req.body.img
     Contact.create(req.body,(err, contacts)=>{
         //res.send(createdProduct)
         //console.log("hello world")

@@ -15,6 +15,12 @@ class Default extends React.Component{
             <body class="container">
                 {this.props.children}
             </body>
+            <footer class="page-footer font-small blue pt-4">
+                <div class="footer-copyright text-center py-3"> 
+                    Creator: Luting (Zoe) Chen <br/>
+                    © 2020 Copyright <br/>
+                    Contact: <a href="https://www.linkedin.com/in/luting-chen">LinkedIn</a> <a href="https://github.com/zchen92/">GitHub</a></div>
+            </footer>
         </html>
         )
     }
