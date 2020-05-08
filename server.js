@@ -63,15 +63,19 @@ app.post('/search', (req,res)=>{
     Contact.find({company:req.body.search}, (err, foundSearch)=>{
         // Contact.find({}, (err, allContacts)=>{
             //res.render("Search", {search:foundSearch, contacts:allContacts})
+            console.log(foundSearch, "IS THE FOUND SEARCH in CONTACT.FIND")
             contacts = foundSearch
+            // contacts.push(foundSearch)
        // })
     });
     Job.find({company:req.body.search}, (err, foundSearch)=>{
         // res.send(foundSearch)
         // Job.find({}, (err, allJobs)=>{
+            // contacts.push(foundSearch)
+            console.log(foundSearch, "IS THE NEW FOUND SEARCH IN JOB.FIND")
+            console.log([...foundSearch, ...contacts])
             res.render("Search", {search:[...foundSearch, ...contacts]}) //... is used to takes contents of 2 arrays and puts it into one
     });
-    
 })
 
 // app.post('/search', (req,res)=>{

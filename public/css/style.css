@@ -1,3 +1,30 @@
 *{
-    border: solid 2px gold
+    /* border: solid 2px gold; */
+    font-family: 'Lato', sans-serif;
+}
+
+.container { 
+    height: 40vh;
+}
+
+h1 {
+    /* border: solid blue 2px; */
+    text-align: center;
+    margin: 50px;
+    padding: 20px
+}
+
+h2 { 
+    text-align: center;
+    margin: 30px;
+}
+
+.container-sm {
+    border: solid 2px green;
+    margin: 50px;
+
+}
+
+.navbar {
+    align-items: center;
 }

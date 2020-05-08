@@ -21,10 +21,12 @@ class Search extends React.Component{
                         <h1>Found Search</h1>
                         <div>
                             {this.props.search.map((newSearch, index)=>{
+                                {console.log(newSearch.name)}
                                 return(
                                     <div>
                                     <h2>Company: {newSearch.company}</h2><br/>
-                                    <h2>Company: {newSearch.position}</h2><br/>
+                                    <h2>Position: {newSearch.position}</h2><br/>
+                                    <h2>Name: {newSearch.name}</h2>
                                     </div>
                                 )
                             })}
