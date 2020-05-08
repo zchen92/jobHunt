@@ -32,7 +32,7 @@ app.engine('jsx', require('express-react-views').createEngine());
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/jobHunt'
 
 // connect to mongo
-mongoose.connection(MONGODB_URI, {useNewUrlParser: true});
+mongoose.connect(MONGODB_URI, {useNewUrlParser: true});
 
 // Error / success
 mongoose.connection.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
@@ -107,6 +107,6 @@ app.post('/search', (req,res)=>{
 ////////////////////////
 /////   LISTEN    //////
 ////////////////////////
-app.listen(port, ()=>{
+app.listen(PORT, ()=>{
     console.log('listening on port: ' + PORT);
 })
