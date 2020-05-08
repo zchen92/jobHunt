@@ -1,6 +1,6 @@
 {
-  "engines":{
-    "node":"12.16.2"
+  "engines": {
+    "node": "12.16.2"
   },
   "name": "jobHunt",
   "version": "1.0.0",
