@@ -19,7 +19,7 @@ class Default extends React.Component{
                 <div class="footer-copyright text-center py-3"> 
                     Creator: Luting (Zoe) Chen <br/>
                     © 2020 Copyright <br/>
-                    Contact: <a href="https://www.linkedin.com/in/luting-chen">LinkedIn</a> <a href="https://github.com/zchen92/">GitHub</a></div>
+                    Contact: <a href="https://www.linkedin.com/in/luting-chen">linkedIn</a> <a href="https://github.com/zchen92/">GitHub</a></div>
             </footer>
         </html>
         )
