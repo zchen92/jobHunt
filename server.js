@@ -73,7 +73,7 @@ app.post('/search', (req,res)=>{
         // Job.find({}, (err, allJobs)=>{
             // contacts.push(foundSearch)
             console.log(foundSearch, "IS THE NEW FOUND SEARCH IN JOB.FIND")
-            console.log([...foundSearch, ...contacts])
+            console.log([...foundSearch, ...contacts], "")
             res.render("Search", {search:[...foundSearch, ...contacts]}) //... is used to takes contents of 2 arrays and puts it into one
     });
 })
