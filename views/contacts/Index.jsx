@@ -5,10 +5,10 @@ class Index extends React.Component{
     render() {
         const {contacts} = this.props
         return (
-            <Default stylesheet="css/show.css">
+            <Default stylesheet="css/index.css">
             <div>
                 <div class="container-fluid">
-                    <header class = "container" >
+                    <header class = "container">
                         <h1 class="display-1">All Contacts</h1>
                         <nav class="navbar navbar-expand-lg navbar-light bg-light" class = "d-flex justify-content-left">
                             <a class="navbar-brand" href="/">Home</a>

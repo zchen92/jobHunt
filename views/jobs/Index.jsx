@@ -6,7 +6,7 @@ class Index extends React.Component{
         const { jobs } = this.props
         console.log(this.props)
         return (
-            <Default stylesheet="css/show.css">
+            <Default stylesheet="css/index.css">
             <div class="container-fluid">
                 <header class = "container" >
                     <h1 class="display-1">All Jobs</h1>

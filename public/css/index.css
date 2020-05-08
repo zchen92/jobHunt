@@ -1,0 +1,27 @@
+*{
+    font-family: 'Lato', sans-serif;
+    color: ivory;
+}
+
+.container { 
+    height: 30vh;
+    background: url(https://i.imgur.com/C8nTT1k.jpg)no-repeat center center fixed;
+    background-size: cover;
+}
+
+h1 {
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+}
+
+.navbar {
+    position: relative;
+}
+
+h2 {
+    color: black; 
+}
+
+.show-grid {
+    padding: 10px
+}

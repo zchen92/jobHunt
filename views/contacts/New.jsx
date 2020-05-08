@@ -4,6 +4,7 @@ const Default = require('../Default.jsx');
 class New extends React.Component{
     render() {
         return(
+            <Default stylesheet="css/show.css">
             <div>
                 <h1>Add a New Contact</h1>
                 <form action="/contacts" method="POST">
@@ -14,11 +15,11 @@ class New extends React.Component{
                     Email: <input type="email" name='email'/><br/>
                     Last Contacted: <input type="date" name="lastContacted"/><br/>
                     Notes: <input type="textarea" name="notes"/><br/>
-                    
                     Tags: <input type="texts" name="tags"/><br/>
                     <input type="submit" name="" value="Add Contact"/>
                 </form>
             </div>
+            </Default>
         )
     }
 }
