@@ -7,10 +7,10 @@ Orderly is a program to help users organize their contacts and any jobs they may
 ## Technologies used
 1. Node.js
 2. Express
-3. Mongoose
-4. JSX
-5. Bootstrap
-6. CSS
+3. Mongoose and Mongo DB
+4. JSX 
+5. Bootstrap and CSS
+6. HTML
 
 ## Approach
 
