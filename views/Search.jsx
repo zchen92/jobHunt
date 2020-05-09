@@ -4,7 +4,7 @@ const Default = require('./Default.jsx');
 class Search extends React.Component{
     render() {
         const { jobs } = this.props
-        console.log(this.props)
+        console.log(this.props) 
         return (
             <Default stylesheet="/css/show.css">
             <div>
@@ -20,7 +20,7 @@ class Search extends React.Component{
                                     <li class="nav-item active">
                                         <a class="nav-link" href="/">Home
                                             <span class="sr-only">(current)</span>
-                                            </a>
+                                        </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="/contacts">Contacts</a>
@@ -52,21 +52,20 @@ class Search extends React.Component{
                                 <div>
                                     <div>
                                         {this.props.search.map((newSearch, index)=>{
-                                            {console.log(newSearch.name)}
                                             return(
                                                 <div>
-                                                <h2>Company: {newSearch.company}</h2><br/>
-                                                <h2>Position: {newSearch.position}</h2><br/>
-                                                <h2>Name: {newSearch.name}</h2>
+                                                <h2>Company: {newSearch.company} </h2><br/>
+                                                <h2 className={newSearch.position ? "" : "hide"}>Position: <a href={`/jobs/${newSearch.id}`}> {newSearch.position} </a></h2><br/>
+                                                <h2 className={newSearch.name ? "" : "hide"} >Name: <a href={`/contacts/${newSearch.id}`}> {newSearch.name} </a></h2> 
                                                 </div>
-                                            )
+                                                )
                                         })}
                                     </div>
                                 </div>
                             }
-            </div>
-            </div>
-            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             </Default>
         );

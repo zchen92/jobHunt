@@ -25,3 +25,12 @@ h2 {
 .show-grid {
     padding: 10px
 }
+
+.show-grid img {
+    width: 200px;
+    height: 200px
+}
+
+.registrationForm {
+    background-color: white;
+}

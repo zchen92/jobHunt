@@ -19,7 +19,7 @@ class Edit extends React.Component{
                                     <li class="nav-item active">
                                         <a class="nav-link" href="/">Home
                                             <span class="sr-only">(current)</span>
-                                            </a>
+                                        </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="/contacts">Contacts</a>
@@ -65,11 +65,11 @@ class Edit extends React.Component{
                             <input type="submit" name="" value="Update Job"/>
                         </form>
                         <button><a href={`/jobs/${_id}`}>Back</a></button>
-                        </div>
                     </div>
+                </div>
             </div>
-            </div>
-            </Default>
+        </div>
+        </Default>
         )
     }
 }

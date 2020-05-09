@@ -16,26 +16,26 @@ class Index extends React.Component{
                             <a class="nav-item nav-link" href="/contacts/new">Add New Contact</a>
                         </nav>
                         <form action="/search" method="POST">
-                        <input type="text" name="search"/>
-                        <input type="submit" name="submit"/>
-                    </form>
+                            <input type="text" name="search"/>
+                            <input type="submit" name="submit"/>
+                        </form>
                     </header>
-                <div class="container">
-                <div className="row row-cols-3" class="d-flex justify-content-around">
-                    {contacts.map((contact,index)=>{
-                        return(
-                            <div class="show-grid">
-                                <h2><a href={`/contacts/${contact._id}`}>{contact.name}</a></h2><br/>
-                                <h3>{contact.company}</h3><br/>
-                                <img src={contact.img} alt="" class="w-25 p-3" class="img-fluid" alt="Responsive image" class="img-thumbnail"/>
-                            </div>
-                        )
-                    })}
+                    <div class="container">
+                        <div className="row row-cols-3" class="d-flex justify-content-around">
+                            {contacts.map((contact,index)=>{
+                                return(
+                                    <div class="show-grid">
+                                        <h2><a href={`/contacts/${contact._id}`}>{contact.name}</a></h2><br/>
+                                        <h3>{contact.company}</h3><br/>
+                                        <img src={contact.img} alt="" class="w-25 p-3" class="img-fluid" alt="Responsive image" class="img-thumbnail"/>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    </div>
                 </div>
             </div>
-            </div>
-            </div>
-            </Default>
+        </Default>
         )
     }
 }

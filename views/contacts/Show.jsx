@@ -20,7 +20,7 @@ class Show extends React.Component{
                                         <li class="nav-item active">
                                             <a class="nav-link" href="/">Home
                                                 <span class="sr-only">(current)</span>
-                                                </a>
+                                            </a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="/contacts">Contacts</a>

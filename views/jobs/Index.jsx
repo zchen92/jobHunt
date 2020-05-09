@@ -21,21 +21,21 @@ class Index extends React.Component{
                 </form>
                 </header>
                 <div class="container">
-                <div className="row row-cols-3" class="d-flex justify-content-around">
-                    {jobs.map((job,index)=>{
-                        return(
-                                <div class="show-grid">
-                                    <h2>{job.company}</h2><br/>
-                                    <h3><a href={`/jobs/${job._id}`}>{job.position}</a></h3><br/>
-                                    <h4>Have you Applied? {job.haveYouApplied ? `Yes`: `No`}</h4><br/>
-                                    <h4>Did you get an interview? {job.gotAnInterview ? `Yes` :`No`}</h4><br/>
-                                    <h4>Did you receive an offer? {job.receivedAnOffer ? `Yes` : `No`}</h4>
-                                </div>
-                        )
-                    })}
-                </div>
-                </div>
-                </div>
+                    <div className="row row-cols-3" class="d-flex justify-content-around">
+                        {jobs.map((job,index)=>{
+                            return(
+                                    <div class="show-grid">
+                                        <h2>{job.company}</h2><br/>
+                                        <h3><a href={`/jobs/${job._id}`}>{job.position}</a></h3><br/>
+                                        <h4>Have you Applied? {job.haveYouApplied ? `Yes`: `No`}</h4><br/>
+                                        <h4>Did you get an interview? {job.gotAnInterview ? `Yes` :`No`}</h4><br/>
+                                        <h4>Did you receive an offer? {job.receivedAnOffer ? `Yes` : `No`}</h4>
+                                    </div>
+                                    )
+                                })}
+                            </div>
+                        </div>
+                    </div>
             </Default>
         );
     };

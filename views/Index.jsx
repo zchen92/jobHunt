@@ -17,7 +17,7 @@ class Index extends React.Component {
                             <a class="nav-item nav-link" href="/contacts">Contacts</a>
                         </nav>
                         <div class = "container-sm" class="w-50 p-3" class="d-flex justify-content-center">
-                            <form action="/register" method="POST" class="px-4 py-3">
+                            <form action="/register" method="POST" class="px-4 py-3" class="registrationForm">
                                 <div class="form-group row">
                                     <legend class="d-flex justify-content-center">SIGN IN</legend>
                                     <label for="username" class="col-sm-2 col-form-label">USERNAME</label>

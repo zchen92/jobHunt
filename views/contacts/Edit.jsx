@@ -19,7 +19,7 @@ class Edit extends React.Component{
                                     <li class="nav-item active">
                                         <a class="nav-link" href="/">Home
                                             <span class="sr-only">(current)</span>
-                                            </a>
+                                        </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="/contacts">Contacts</a>
@@ -49,24 +49,24 @@ class Edit extends React.Component{
                     </header>
                 <div class="container" class="bodyPortion">
                     <div className="col">
-                    <h1 class="display-1">Edit Contact</h1>
-                    <form action={`/contacts/${_id}?_method=PUT`} method="POST">
-                        Name: <input type="text" name="name" defaultValue={name}/><br/>
-                        Company: <input type="text" name="company" defaultValue={company}/><br/>
-                        Image: <input type="url" name="img" defaultValue={img}/><br/>
-                        Phone Number: <input type="number" name="phone" defaultValue={phone}/><br/>
-                        Email: <input type="email" name='email' defaultValue={email}/><br/>
-                        Last Contacted: <input type="date" name="lastContacted" defaultValue={lastContacted ? lastContacted : ""}/><br/>
-                        Notes: <input type="textarea" name="notes" defaultValue={notes}/><br/>
-                        Tags: <input type="texts" name="tags" defaultValue={tags}/><br/>
-                        <input type="submit" name="" value="Update Contact"/>
-                    </form>
-                    <button><a href={`/contacts/${_id}`}>Back</a></button>
+                        <h1 class="display-1">Edit Contact</h1>
+                        <form action={`/contacts/${_id}?_method=PUT`} method="POST">
+                            Name: <input type="text" name="name" defaultValue={name}/><br/>
+                            Company: <input type="text" name="company" defaultValue={company}/><br/>
+                            Image: <input type="url" name="img" defaultValue={img}/><br/>
+                            Phone Number: <input type="number" name="phone" defaultValue={phone}/><br/>
+                            Email: <input type="email" name='email' defaultValue={email}/><br/>
+                            Last Contacted: <input type="date" name="lastContacted" defaultValue={lastContacted ? lastContacted : ""}/><br/>
+                            Notes: <input type="textarea" name="notes" defaultValue={notes}/><br/>
+                            Tags: <input type="texts" name="tags" defaultValue={tags}/><br/>
+                            <input type="submit" name="" value="Update Contact"/>
+                        </form>
+                        <button><a href={`/contacts/${_id}`}>Back</a></button>
                     </div>
-                    </div>
+                </div>
             </div>
-            </div>
-            </Default>
+        </div>
+        </Default>
         )
     }
 }

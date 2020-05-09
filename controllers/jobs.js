@@ -10,7 +10,6 @@ const Job = require('../models/jobs.js');
 ////  INDEX - Jobs  ////
 ///////////////////////
 router.get('/', (req,res)=>{
-    // res.render('jobs/Index');
     Job.find({},(err,allJobs)=>{
         res.render('jobs/Index', {jobs:allJobs});
     });
@@ -73,7 +72,7 @@ router.post('/', (req,res)=>{
     Job.create(req.body, (err, jobs)=>{
         res.redirect('/jobs');
     });
-})
+});
 
 //////////////////////////
 ////  DELETE - Jobs  ////
@@ -82,7 +81,7 @@ router.delete('/:id',(req,res)=>{
     Job.findByIdAndRemove(req.params.id,(err,job)=>{
         res.redirect('/jobs');
     });
-})
+});
 
 /////////////////////////
 ////  UPDATE - Jobs ////
@@ -110,9 +109,9 @@ router.put('/:id', (req,res)=>{
         delete req.body.interviewDate //just deleted data from mongodb
     };
     Job.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedJob)=>{
-        res.redirect(`/jobs/${req.params.id}`)
-    })
-})
+        res.redirect(`/jobs/${req.params.id}`);
+    });
+});
 
 //////////////////////////
 ////  Export Router  ////

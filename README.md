@@ -25,7 +25,7 @@ I am also trying to successfully create a search route, that allows the users to
 ### Step Three - Adding Bootstrap and CSS
 I created Default.jsx, and two separate CSS files to add in all the design. 
 
-### Step 4 - Uploading to Heroku 
+### Step 4 - Deploy with Heroku 
 Link: https://orderly-project.herokuapp.com/
 
 ## Challenges
@@ -41,14 +41,14 @@ The search route is still not fully functioning and needs to be updated, so when
 ## Future Goals:
 
 ### Design 
-There is still a lot of improvements to be had with the CSS/Boostrap design. Some items include fixing white spacing from bootstrap, adjusting the location of the footer so it actually shows up at the bottom of the page, adjusting the size of the contact photos to all be similar size, and making the form more visible on the front page. I would also like to I would also like to add more response design to make the site more mobile friendly
+There is still a lot of improvements to be had with the CSS/Boostrap design. Some items include fixing white spacing from bootstrap, adjusting the location of the footer so it actually shows up at the bottom of the page, and making the form more visible on the front page. I would also like to I would also like to add more response design to make the site more mobile friendly
 
 
 ### API
 Adding actual API data from outside sources
 
-### Image options
-I was not able to get my dummy image to show up if the user does not upload a photo of the contact
+### Sign on
+Get the sign in option viable
 
 ## App Demo 
 Please take a look at my project 

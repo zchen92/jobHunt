@@ -1,5 +1,4 @@
-*{
-    /* border: solid 2px gold; */
+* {
     font-family: 'Lato', sans-serif;
     background: url(https://i.imgur.com/Lg5BVBt.jpg)no-repeat center center fixed;
     background-size: cover;
@@ -10,9 +9,7 @@
     height: 40vh;
 }
 
-
 h1 {
-    /* border: solid blue 2px; */
     text-align: center;
     margin: 50px;
     padding: 20px

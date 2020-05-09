@@ -2,10 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Contact = require('../models/contacts.js');
 
-// router.get('/', (req,res)=>{
-//     res.render('contacts/Index.jsx');
-// });
-
 ////////////////////////////////////////////
 ///////   PRESENTATIONAL ROUTES     ///////
 //////////////////////////////////////////
@@ -14,7 +10,6 @@ const Contact = require('../models/contacts.js');
 ////  INDEX - Contacts ////
 //////////////////////////
 router.get('/', (req,res)=>{
-    // res.render('contacts/Index');
     Contact.find({},(err,allContacts)=>{
         res.render('contacts/Index', {contacts:allContacts});
     });
@@ -45,7 +40,6 @@ router.get('/:id/edit', (req,res)=>{
     });
 });
 
-
 ////////////////////////////////////////////
 ////////      FUNCTIONAL ROUTES    ////////
 ///////////////////////////////////////////
@@ -58,11 +52,9 @@ router.post('/',(req,res)=>{
     if (req.body.lastContacted == null) {
         delete req.body.lastContacted //just deleted data from mongodb
     };
-    console.log(req.body.img)
-    req.body.img === '' ? req.body.img = `https://i.imgur.com/LtT3pWh.jpg` : req.body.img = req.body.img
+    // console.log(req.body.img)
+    req.body.img ==='' ? req.body.img = 'https://i.imgur.com/LtT3pWh.jpg' : req.body.img = req.body.img
     Contact.create(req.body,(err, contacts)=>{
-        //res.send(createdProduct)
-        //console.log("hello world")
         res.redirect('/contacts');
     });
 });
@@ -74,7 +66,7 @@ router.delete('/:id',(req,res)=>{
     Contact.findByIdAndRemove(req.params.id,(err,contact)=>{
         res.redirect('/contacts');
     });
-})
+});
 
 /////////////////////////////
 ////  UPDATE - Contacts ////
@@ -82,11 +74,11 @@ router.delete('/:id',(req,res)=>{
 router.put('/:id', (req,res)=>{
     if (req.body.lastContacted == null) {
         delete req.body.lastContacted //just deleted data from mongodb
-    }
+    };
     Contact.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedContact)=>{
-        res.redirect(`/contacts/${req.params.id}`)
-    })
-})
+        res.redirect(`/contacts/${req.params.id}`);
+    });
+});
 
 //////////////////////////
 ////  Export Router  ////
